@@ -14,10 +14,13 @@ const App = () => {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Heading>The Wild Oasis</Heading>
+        <Heading as="h1">The Wild Oasis</Heading>
+
+        <Heading as="h2">Check-in/Check-out</Heading>
         <Button>Check-in</Button>
         <Button>Check-out</Button>
 
+        <Heading as="h3">Forms</Heading>
         <Input type="number" placeholder="Number of guests" />
         <Input type="number" placeholder="Number of guests" />
       </StyledApp>
