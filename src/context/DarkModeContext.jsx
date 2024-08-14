@@ -3,7 +3,7 @@ import { useLocalStorageState } from '../hooks/useLocalStorageState';
 
 const DarkModeContext = createContext();
 
-const DarkModeProvider = ({ children }) => {
+export const DarkModeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(false, 'isDarkMode');
 
   useEffect(() => {
@@ -27,12 +27,10 @@ const DarkModeProvider = ({ children }) => {
   );
 };
 
-const useDarkMode = () => {
+export const useDarkMode = () => {
   const context = useContext(DarkModeContext);
   if (context === 'undefined')
     throw new Error('Dark Mode context is being used outisde of Provider');
 
   return context;
 };
-
-export { DarkModeProvider, useDarkMode };
