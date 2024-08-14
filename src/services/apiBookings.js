@@ -78,7 +78,7 @@ export async function getStaysAfterDate(date) {
 }
 
 // Activity means that there is a check in or a check out today
-export async function getStaysTodayActivity() {
+export const getStaysTodayActivity = async () => {
   const { data, error } = await supabase
     .from('bookings')
     .select('*, guests(fullName, nationality, countryFlag)')
@@ -95,8 +95,9 @@ export async function getStaysTodayActivity() {
     console.error(error);
     throw new Error('Bookings could not get loaded');
   }
+
   return data;
-}
+};
 
 export async function updateBooking(id, obj) {
   const { data, error } = await supabase
