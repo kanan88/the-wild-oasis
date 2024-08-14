@@ -18,9 +18,6 @@ import Checkin from './pages/Checkin';
 import ProtectedRoute from './ui/ProtectedRoute';
 import { DarkModeProvider } from './context/DarkModeContext';
 
-// isLoading is now called isPending
-// The cacheTime option is now called gcTime
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
